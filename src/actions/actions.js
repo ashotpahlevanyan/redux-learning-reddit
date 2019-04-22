@@ -57,12 +57,6 @@ function shouldFetchPosts(state, subreddit) {
 }
 
 export function fetchPostsIfNeeded(subreddit) {
-	// Note that the function also receives getState()
-	// which lets you choose what to dispatch next.
-
-	// This is useful for avoiding a network request if
-	// a cached value is already available.
-
 	return (dispatch, getState) => {
 		if(shouldFetchPosts(getState(), subreddit)) {
 			// Dispatch a thunk from thunk!
